@@ -1,0 +1,33 @@
+.item{
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  .card{
+    padding: 16px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    .thumbnail{
+      width: 680px;
+    }
+    .details{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      button{
+        background-color: #3483FA;
+      }
+    }
+  }
+  .description{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 16px;
+    .title{
+      font-size: 28px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "app":{
+        "finder":{
+            "inputPlaceHolder": "Nunca dejes de buscar"
+        },
+        "items":{
+            "noResultsTxt": "No hay resultados para la busqueda"
+
+        },
+        "item":{
+            "newLabel": "Nuevo",
+            "soldLabel": "vendidos",
+            "buyLabel": "Comprar",
+            "descLabel": "Descripcion del producto"
+
+        }
+    }
+}
