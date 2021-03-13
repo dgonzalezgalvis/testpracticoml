@@ -19,6 +19,7 @@ class Items extends React.Component {
 
   findItems(searchText) {
     this.invokeSearchApi(searchText).then(results=>{
+      console.log(results);
       this.setState({results})
     });
   }
@@ -34,16 +35,18 @@ class Items extends React.Component {
   render(){
     const {locale} = this.props;
     const {results} = this.state;
+    
     return (
       <div className="items">
+        <div className="container">
         {results && results.length > 0 && results.map((item, index)=>{
           return (<div key={`item${index}`} className="item">
             <div className="thumbnail">
               <img src={item.thumbnail} onClick={()=>this.props.selectItem(item)}></img>
             </div>
             <div className="description">
-              <div className="price">$ {item.price}</div>
-              <div>{item.title}</div>
+              <div className="price">$ {new Intl.NumberFormat("de-DE").format(item.price)}</div>
+              <div className="title">{item.title}</div>
               <div>{item.condition} - {item.sold_quantity}</div>
             </div>
             <div className="location">
@@ -52,6 +55,8 @@ class Items extends React.Component {
           </div>)
         })};
         {results && results.length === 0 && locale.noResultsTxt}
+        </div>
+        
       </div>
     );
   }

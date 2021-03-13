@@ -6,7 +6,7 @@ import { throwStatement } from '@babel/types';
 class Finder extends React.Component {
   constructor(props){
     super(props);
-    this.setSearchText = this.setSearchText.bind(this);
+    this.goToLink = this.goToLink.bind(this);
     this.search = this.search.bind(this);
     this.input = React.createRef();
     // this.state = {
@@ -14,23 +14,10 @@ class Finder extends React.Component {
     // };
   }
 
-  // componentDidMount(){
-  //   let {searchText} = this.props;
-  //   if(searchText){
-  //     this.setState({searchText});
-  //   }
-  // }
-
-  componentDidUpdate(){
-    // let {searchText} = this.props;
-    // if(searchText){
-    //   this.setState({searchText});
-    // }
+  goToLink(){
+    window.location.replace(`/`);
   }
 
-  setSearchText(newValue){
-    // this.setState({searchText:newValue});
-  }
 
   search(){
     this.props.search(this.input.current.value);
@@ -40,15 +27,21 @@ class Finder extends React.Component {
     let {searchText} = this.props;
     return (
       <div className="finder">
-        <img src={logo}></img>
-        <input type="text"
-          placeholder={this.props.locale.inputPlaceHolder}
-          ref={this.input}
-          defaultValue={searchText}
-          ></input>
-        <button 
-          className="search"
-          onClick={this.search}></button>
+        <div className="container">
+          <img src={logo} onClick={this.goToLink}></img>
+          <div className="input-holder">
+            <input type="text"
+              placeholder={this.props.locale.inputPlaceHolder}
+              ref={this.input}
+              defaultValue={searchText}
+              ></input>
+            <button 
+              className="search"
+              onClick={this.search}></button>
+          </div>
+          
+        </div>
+        
       </div>
     );
   }

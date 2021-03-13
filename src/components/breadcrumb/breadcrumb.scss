@@ -1,0 +1,26 @@
+@import '../main/main.scss';
+.breadcrumb{
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 50px;
+  color: #999999;
+  width: 100%;
+  .container{
+    min-width: $container-min-width;
+    width: $container-width;
+    max-width: $container-max-width;
+    span{
+      margin: 0 15px 0 0;
+      &.clickable{
+        cursor: pointer;
+      }
+      &:last-child{
+        flex-grow: 1;
+      }
+    }
+  }
+}

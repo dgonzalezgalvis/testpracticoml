@@ -1,9 +1,10 @@
 import React from 'react';
-import './main.css';
+import './main.scss';
 import locales from '../../common/locales/es.json';
 import Finder from '../finder/finder';
 import Items from '../items/items';
 import Item from '../item/item';
+import Breadcrumb from '../breadcrumb/breadcrumb';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,7 +18,6 @@ class Main extends React.Component {
     super();
     this.state = {
       searchText:'',
-      results: [],
       itemSelected: null
     }
     this.search = this.search.bind(this);
@@ -39,9 +39,6 @@ class Main extends React.Component {
     if(searchText){
       this.setState({searchText, itemSelected: null});
       window.location.replace(`/items?search=${searchText}`);
-      // if(window.location.pathname.indexOf('/items') !== 0){
-      //   window.location.replace(`/items?search=${searchText}`);
-      // }
     }
   }
 
@@ -55,19 +52,12 @@ class Main extends React.Component {
     return (
       <Router>
         <div className="main">
-        {/* <Finder locale={locales.app.finder}
-          getResults={this.getResults}></Finder>
-        {(results.length > 0 && !itemSelected) && (
-          <Items list={results} selectItem={this.selectItem}></Items>
-        )}
-        {itemSelected && (
-          <Item locale={locales.app.item} item={itemSelected}></Item>
-        )} */}
-        <Finder locale={locales.app.finder}
-            searchText={searchText}
-            search={this.search}></Finder>
-        {searchText && (<Items searchText={searchText} locale={locales.app.items}  selectItem={this.selectItem}></Items>)}
-        {itemSelected && (<Item locale={locales.app.item} itemId={itemSelected}></Item>)}   
+          <Finder locale={locales.app.finder}
+              searchText={searchText}
+              search={this.search}></Finder>
+          <Breadcrumb searchText={searchText} itemId={itemSelected}></Breadcrumb>
+          {searchText && (<Items searchText={searchText} locale={locales.app.items}  selectItem={this.selectItem}></Items>)}
+          {itemSelected && (<Item locale={locales.app.item} itemId={itemSelected}></Item>)}   
       </div>
       
       </Router>

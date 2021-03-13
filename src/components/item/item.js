@@ -55,22 +55,23 @@ class Item extends React.Component {
     if(item){
       return (
         <div className="item">
-          <div className="card">
-            <div className="thumbnail">
-              <img src={item.thumbnail}></img>
+          <div className="container">
+            <div className="column-left">
+              <div className="thumbnail">
+                <img src={item.thumbnail}></img>
+              </div>
+              <div className="description">
+                <div className="title">{locale.descLabel}</div>
+                {description}
+              </div>
             </div>
-            <div className="details">
-            <div>{item.condition} - {item.sold_quantity} {locale.soldLabel}</div>
-              <div>{item.title}</div>
-              <div>${item.price}</div>
+            <div className="column-right">
+              <div className="first-line">{item.condition} - {item.sold_quantity} {locale.soldLabel}</div>
+              <div className="title">{item.title}</div>
+              <div className="price">${item.price}</div>
               <button>{locale.buyLabel}</button>
             </div>
           </div>
-          <div className="description">
-            <div className="title">{locale.descLabel}</div>
-            {description}
-          </div>
-          
         </div>
       );
     } else return <div>item not found</div>

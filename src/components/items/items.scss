@@ -1,35 +1,53 @@
+@import '../main/main.scss';
 .items{
-  .item{
-    padding: 16px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    .thumbnail{
-      img{
-        margin: 0 16px;
-        width: 180px;
-        height: 180px;
-        border-radius: 4px;
-      }
-      
-    }
-    .description{
-      width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  .container{
+    background-color: #ffffff;
+    min-width: $container-min-width;
+    width: $container-width;
+    max-width: $container-max-width;
+    .item{
+      padding: 16px 0;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: flex-start;
-      align-items: flex-start;
-      font-size: 18px;
-      .price{
-        font-size: 24px;
-        padding-bottom: 32px;
+      .thumbnail{
+        img{
+          margin: 0 16px;
+          width: 180px;
+          height: 180px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
       }
+      .description{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 18px;
+        .price{
+          font-size: 24px;
+          padding-bottom: 32px;
+        }
+        .title{
+          text-align: left;
+          font-size: 18px;
+        }
+      }
+      .location{
+        font-size: 12px;
+        // color: #999999;
+        color: #666666;
+      }
+  
     }
-    .location{
-      font-size: 12px;
-      // color: #999999;
-      color: #666666;
-    }
-
   }
+
 }

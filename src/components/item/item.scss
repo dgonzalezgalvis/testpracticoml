@@ -1,33 +1,67 @@
+@import '../main/main.scss';
 .item{
+  
   padding: 16px 0;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  .card{
-    padding: 16px 0;
+  flex-direction: row;
+  justify-content: center;
+  .container{
+    background-color: #ffffff;
+    min-width: $container-min-width;
+    width: $container-width;
+    max-width: $container-max-width;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-
-    .thumbnail{
-      width: 680px;
-    }
-    .details{
+    .column-left{
+      padding: 16px 0;
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
+      width: 680px;
+      .thumbnail{
+        display: flex;
+        justify-content: center;
+        width: 680px;
+        img{ 
+        }
+      }
+      .description{
+        padding-left: 32px;
+        text-align: letf;
+        font-size:16px;
+        
+        .title{
+          font-size:28px; 
+          margin-bottom: 32px;
+        }
+      }
+    }
+    .column-right{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
       align-items: flex-start;
+      .first-line{  
+        font-size: 14px;
+      }
+      .title{
+        text-align: left;
+        font-size: 24px;
+      }
+      .price{
+        font-size: 46px;
+        margin: 32px 0;
+      }
       button{
         background-color: #3483FA;
+        width: calc(100% - 32px);
+        margin-right: 32px;
+        border: 0;
+        color: #ffffff;
+        padding: 16px;
+        border-radius: 5px;
       }
     }
   }
-  .description{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 16px;
-    .title{
-      font-size: 28px;
-    }
-  }
+
 }
