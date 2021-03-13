@@ -65,7 +65,15 @@ class Item extends React.Component {
           </div>
         </div>
       );
-    } else return <div>item not found</div>
+    } else {
+      return (
+        <div className="item">
+          <div className="container">
+            {locale.itemNotFoundText}
+          </div>
+        </div>
+      );
+    }
     
   }
   

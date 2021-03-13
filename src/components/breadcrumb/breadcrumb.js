@@ -21,11 +21,11 @@ class Breadcrumb extends React.Component {
   }
 
   render(){
-    let {searchText, itemId} = this.props;
+    let {searchText, itemId, locale} = this.props;
     return (
       <div className="breadcrumb">
         <div className="container">
-          <span className="clickable" onClick={()=>this.goToLink()}>Inicio</span>
+    <span className="clickable" onClick={()=>this.goToLink()}>{locale.homeText}</span>
           {searchText && (<span>
             <span>{'>'}</span>
             <span className="clickable" onClick={()=>this.goToLink(searchText)}>{searchText}</span>

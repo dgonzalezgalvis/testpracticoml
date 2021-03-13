@@ -11,8 +11,12 @@
             "newLabel": "Nuevo",
             "soldLabel": "vendidos",
             "buyLabel": "Comprar",
-            "descLabel": "Descripcion del producto"
+            "descLabel": "Descripcion del producto",
+            "itemNotFoundText": "Elemento no encontrado"
 
+        },
+        "breadcrumb":{
+            "homeText": "Inicio"
         }
     }
 }

@@ -51,7 +51,7 @@ class Main extends React.Component {
           <Finder locale={locales.app.finder}
               searchText={searchText}
               search={this.search}></Finder>
-          <Breadcrumb searchText={searchText} itemId={itemSelected}></Breadcrumb>
+          <Breadcrumb searchText={searchText} itemId={itemSelected} locale={locales.app.breadcrumb}></Breadcrumb>
           {searchText && (<Items searchText={searchText} locale={locales.app.items}  selectItem={this.selectItem}></Items>)}
           {itemSelected && (<Item locale={locales.app.item} itemId={itemSelected}></Item>)}   
       </div>
