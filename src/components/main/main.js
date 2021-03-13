@@ -7,11 +7,7 @@ import Item from '../item/item';
 import Breadcrumb from '../breadcrumb/breadcrumb';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
 } from "react-router-dom";
-import { withRouter } from "react-router";
 
 class Main extends React.Component {
   constructor(){

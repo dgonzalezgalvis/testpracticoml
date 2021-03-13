@@ -9,9 +9,6 @@ class Finder extends React.Component {
     this.goToLink = this.goToLink.bind(this);
     this.search = this.search.bind(this);
     this.input = React.createRef();
-    // this.state = {
-    //   searchText: ''
-    // };
   }
 
   goToLink(){

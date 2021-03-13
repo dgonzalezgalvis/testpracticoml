@@ -7,9 +7,6 @@ class Breadcrumb extends React.Component {
   constructor(props){
     super(props);
     this.goToLink = this.goToLink.bind(this);
-    // this.state = {
-    //   searchText: ''
-    // };
   }
 
   componentDidUpdate(){

@@ -18,13 +18,6 @@ class Item extends React.Component {
     }
   }
 
-  // componentDidUpdate(){
-  //   let {itemId} = this.props;
-  //   if(itemId){
-  //     this.findItem(itemId);
-  //   }
-  // }
-
   findItem(_itemId) {
     this.invokeGetItemApi(_itemId);
     this.invokeGetItemDescApi(_itemId);
@@ -35,7 +28,6 @@ class Item extends React.Component {
     if(call.ok){
       let results = await call.json();
       this.setState({item: results})
-      // return results.results;
     }
   }
 
@@ -45,7 +37,6 @@ class Item extends React.Component {
     if(call.ok){
       let results = await call.json();
       this.setState({description: results.plain_text});
-      // return results.results;
     }
   }
 
